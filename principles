@@ -1,0 +1,16 @@
+Smart Contract Security Principles - Launching a successful ICO
+
+1) do not use call.value() !When sending Ether, use someAddress.send() and avoid someAddress.call.value()().
+2) multisig.balance
+3) Do not rely on timestamps for contract logic, use block.number instead and approximate dates with expected block heights and time periods with expected block amounts.
+4) use a safe math library
+5) =+ (equal to) should have been +=(transfer to)
+6) first, check all the pre-conditions; then, make changes to your contract’s state; and finally, interact with other contracts.
+
+
+
+
+The web application written using JavaScript,
+React user interface library and Bootstrap theming.
+The application is coded in ECMAScript 2016 and wrapped together using Webpack module bundler.
+For the deployment of the contract Go Ethereum JSON-RPC API is used. 
