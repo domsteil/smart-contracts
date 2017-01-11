@@ -1,11 +1,24 @@
 Smart Contract Security Principles - Launching a successful ICO
 
-1) do not use call.value() !When sending Ether, use someAddress.send() and avoid someAddress.call.value()().
+1) do not use call.value() ! When sending Ether, use someAddress.send() and avoid someAddress.call.value()().  Always check return value of a send() and call().
 2) multisig.balance
 3) Do not rely on timestamps for contract logic, use block.number instead and approximate dates with expected block heights and time periods with expected block amounts.
 4) use a safe math library
 5) =+ (equal to) should have been +=(transfer to)
 6) first, check all the pre-conditions; then, make changes to your contract’s state; and finally, interact with other contracts.
+7) Conditions, actions, interactions. AGAIN Conditions, actions, interactions.
+8) Avoid declaring variables using var if possible.
+9) Mind the Gas - Every function call that modifies state has a gas cost. If a transaction reaches the gas limit, all changes will be reverted but the fee is still paid.
+10) Be aware of variable gas costs when using loops.
+11) The EVM’s call stack has a hard limit of 1024. That means that if the amount of nested calls reaches 1024, the contract will fail.
+12) Write tests to avoid regression bugs
+13) Another way to protect our smart contracts from attacks is to limit their scope. This is as simple as a hard limit on the balance of the contract’s address.
+14) functions should be as short as possible
+16) files should be as small as possible
+17) well-named
+18) Don't write all your code from scratch
+19) Make sure your fallback function stays below 2300 gas
+
 
 
 
@@ -14,3 +27,8 @@ The web application written using JavaScript,
 React user interface library and Bootstrap theming.
 The application is coded in ECMAScript 2016 and wrapped together using Webpack module bundler.
 For the deployment of the contract Go Ethereum JSON-RPC API is used. 
+
+
+Serenity is intended to have two major feature sets: abstraction, a concept that I initially expanded on in this blog post here, and Casper, our security-deposit-based proof of stake algorithm.
+
+http://ethereum.stackexchange.com/questions/8551/methodological-security-review-of-a-smart-contract
