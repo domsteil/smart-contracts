@@ -131,7 +131,7 @@ contract DAPPToken is StandardToken {
     function allocateTokens() {
         // make sure founder/developer/rewards/ecosystem/charity addresses are configured
 
-        if(founder == 0x0 || developer == 0x0 || rewards == 0x0 ecosystem == 0x0 || charity == 0x0 ) throw;
+        if(founder == 0x0 || developer == 0x0 || rewards == 0x0 || ecosystem == 0x0 || charity == 0x0 ) throw;
         // owner/founder/developer/rewards/ecosystem/charity addresses can call this function
         if (msg.sender != owner && msg.sender != founder && msg.sender != developer && msg.sender != rewards && msg.sender != ecosystem && msg.sender != charity ) throw;
         // it should only continue if endBlock has passed OR presaleEtherRaised has not reached the cap yet
@@ -256,8 +256,5 @@ contract DAPPToken is StandardToken {
  function() {
         throw;
     }
-
-}
-
 
 }
