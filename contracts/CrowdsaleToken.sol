@@ -12,7 +12,7 @@ import "./StandardToken.sol";
 contract CrowdsaleToken is StandardToken {
 
   string public name = "DApps Token";
-  string public symbol = "DAT";
+  string public symbol = "DAPT";
   uint public decimals = 18;
 
   // 1 ether = 500 example tokens 

@@ -3,7 +3,7 @@ pragma solidity ^0.4.4;
 
 
 import './ERC20.sol';
-import '../SafeMath.sol';
+import './SafeMath.sol';
 
 
 /**
@@ -13,6 +13,8 @@ import '../SafeMath.sol';
  * Based on code by FirstBlood:
  * https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
  */
+
+
 contract StandardToken is ERC20, SafeMath {
 
   mapping(address => uint) balances;

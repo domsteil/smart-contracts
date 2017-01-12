@@ -2,7 +2,7 @@ pragma solidity ^0.4.4;
 
 
 import './ERC20Basic.sol';
-import '../SafeMath.sol';
+import './SafeMath.sol';
 
 
 /*

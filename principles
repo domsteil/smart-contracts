@@ -4,7 +4,7 @@ Smart Contract Security Principles - Launching a successful ICO
 2) multisig.balance
 3) Do not rely on timestamps for contract logic, use block.number instead and approximate dates with expected block heights and time periods with expected block amounts.
 4) use a safe math library
-5) =+ (equal to) should have been +=(transfer to)
+5) =+ (equal to) should have been +=(transfer to)    -=(tranfer from)
 6) first, check all the pre-conditions; then, make changes to your contract’s state; and finally, interact with other contracts.
 7) Conditions, actions, interactions. AGAIN Conditions, actions, interactions.
 8) Avoid declaring variables using var if possible.
@@ -32,3 +32,16 @@ For the deployment of the contract Go Ethereum JSON-RPC API is used.
 Serenity is intended to have two major feature sets: abstraction, a concept that I initially expanded on in this blog post here, and Casper, our security-deposit-based proof of stake algorithm.
 
 http://ethereum.stackexchange.com/questions/8551/methodological-security-review-of-a-smart-contract
+
+
+
+
+
+Time --> Ethereum Blocks  (Assuming 14 second blocks);
+
+
+1 Month = 3185142;
+2 Months = 6370284; 
+3 Months = 9555426;
+
+
