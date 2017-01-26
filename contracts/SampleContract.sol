@@ -9,5 +9,3 @@ contract SampleContract {
     function setValue(uint value_) public {
         value = value_;
     }
-
-}

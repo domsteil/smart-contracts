@@ -1,4 +1,4 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.8;
 
 import("./SafeMath.sol");
 
@@ -48,36 +48,36 @@ function founder2log(address founder2){
 }
 
 
-function equity() constant returns(uint) {
+function readEquity() constant returns(uint) {
 		if (msg.sender != founder1 || msg.sender != founder2) throw;
         return totalEquity; // read only Total Equity
     }
 
-function hours() constant returns(uint) {
+function readHours() constant returns(uint) {
 		if (msg.sender != founder1 || msg.sender != founder2) throw;
 		return totalHours; // read only Total Hours
 	}
 
-function founder1Equity() constant returns(uint) {
+function readfounder1Equity() constant returns(uint) {
 		if (msg.sender != founder1 || msg.sender != founder2) throw;
         return founder1Equity; // read only Founder 1's Equity
     }
 
-function founder2Equity() constant returns(uint) {
+function readfounder2Equity() constant returns(uint) {
 		if (msg.sender != founder1 || msg.sender != founder2) throw;
 		return founder2Equity; // read only Founder 2's Equity
 	}
 
-function founder1Hours() constant returns(uint) {
+function readfounder1Hours() constant returns(uint) {
 		if (msg.sender != founder1 || msg.sender != founder2) throw;
 		return founder1Hours; // read only Founder 1's Hours
 	}
 
-function founder2Hours() constant returns(uint) {
+function readfounder2Hours() constant returns(uint) {
 		if (msg.sender != founder1 || msg.sender != founder2) throw;
 		return founder2Hours; // read only Founder 2's Hours
 	}
-function ownershipPercentage() constant returns(uint) {
+function readownershipPercentage() constant returns(uint) {
 		if (msg.sender != founder1 || msg.sender != founder2) throw;
 		return ownership; // read only percent ownership
 	} 

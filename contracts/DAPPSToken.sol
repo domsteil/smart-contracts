@@ -5,13 +5,12 @@ import "./Ownable.sol";
 import "./Stoppable.sol";
 import "./Bounty.sol";
 import "./Claimable.sol";
-import "./DelayedClaimable.sol";
 
 
 contract DAppsToken is StandardToken, Ownable {
 
-  string public name = "DAppsToken";
-  string public symbol = "DPT";
+  string public name = "dapps.ai token";
+  string public symbol = "DAPT";
   uint public decimals = 18;
   
   uint public startBlock; //crowdsale start block (set in constructor)
