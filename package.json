@@ -1,9 +1,9 @@
 {
   "name": "smartcontracts",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
+    "ethereumjs-tx": "^1.2.5",
     "solc": "^0.4.7",
     "web3": "^0.18.0",
     "webpack": "^1.14.0"
@@ -13,5 +13,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://dominicsteil@bitbucket.org/dominicsteil/smartcontracts.git"
+  },
+  "homepage": "https://bitbucket.org/dominicsteil/smartcontracts#readme",
+  "description": ""
 }

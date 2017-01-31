@@ -10,7 +10,6 @@ contract Lead is Ownable {
   address owner;
   address lead;
   uint eth = 1000000000000000000;
-
   string public contactName;
   string public contactOwner;
   string public title;

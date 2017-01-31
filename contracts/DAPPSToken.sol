@@ -155,16 +155,6 @@ contract DAppsToken is StandardToken, Ownable {
         halted = false;
     }
 
-     /**
-     * Change founder address (where crowdsale ETH is being forwarded).
-     *
-     * Applicable tests:
-     *
-     * - Test founder change by hacker
-     * - Test founder change
-     * - Test founder token allocation twice
-     *
-     */
      
     
     function changeMultisig(address newMultisig) {
@@ -172,57 +162,22 @@ contract DAppsToken is StandardToken, Ownable {
         multisig = newMultisig;
     }
 
-    /**
-     * ERC 20 Standard Token interface transfer function
-     *
-     * Prevent transfers until token sale is over.
-     *
-     * Applicable tests:
-     *
-     * - Test transfer after restricted period
-     * - Test transfer after market activated
-     */
+
 
     function transfer(address _to, uint256 _value) returns (bool success) {
         if (block.number <= endBlock && marketactive == false) throw;
         return super.transfer(_to, _value);
     }
 
-    /**
-     * ERC 20 Standard Token interface transfer function
-     *
-     * Prevent transfers until token sale is over.
-     */
     
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
         if (block.number <= endBlock && marketactive == false) throw;
         return super.transferFrom(_from, _to, _value);
     }
 
-    /**
-     * Direct deposits buys tokens
-     */
+
     function() {
         buyRecipient(msg.sender);
-    }
-
-
-    //OR
-
-    /**
-     * Do not allow direct deposits.
-     *
-     * All crowdsale depositors must have read the legal agreement.
-     * This is confirmed by having them signing the terms of service on the website.
-     * They will give their crowdsale Ethereum source address on the website.
-     * Website signs this address using crowdsale private key (different from founders key).
-     * buy() takes this signature as input and rejects all deposits that do not have
-     * signature you receive after reading terms of service.
-     *
-     */
-
- function() {
-        throw;
     }
 
 }

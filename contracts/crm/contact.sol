@@ -9,7 +9,6 @@ contract Contact is Ownable {
   address owner;
   address contact;
   uint eth = 1000000000000000000;
-
   string public contactName;
   string public contactOwner;
   string public title;

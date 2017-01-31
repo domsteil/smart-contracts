@@ -62,16 +62,6 @@ class Helpers {
     return this.createContract(source, options)
   }
 
-
-
-
-
-
-
-
-
-
-
   etherBalance(contract) {
     switch(typeof(contract)) {
       case "object":
