@@ -8,7 +8,6 @@ contract Account is Ownable {
 
   address public owner;
   address public account;
-  uint public annualRevenue;
   string public accountName;
   string public parentAccount;
   string public phone;
@@ -31,7 +30,7 @@ contract Account is Ownable {
 
   }
 
-  function setUpAccountDetails(uint phone_, uint annualRevenue,  string accountName_, string accountOwner_, string type_, string industry_, string customerRating_, string description_) {
+  function setAccountDetails(bytes32 phone_, bytes32 accountName_, bytes32 accountOwner_, bytes32 type_, bytes32 industry_, bytes32 customerRating_, bytes32 description_) {
   stateMessage = "Account details set";
   accountName = accountName_;
   phone = phone_;

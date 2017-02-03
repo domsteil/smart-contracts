@@ -1,6 +1,6 @@
 pragma solidity ^0.4.8;
 
-import("./SafeMath.sol");
+
 
 
 contract TimeKeeper {
@@ -11,21 +11,16 @@ uint public endBlock;
 
 
 function timeKeeper () {
+	public sender = msg.sender;
 
 
 }
 
-function start() {
+function log(uint st_, uint bt_) {
+	st_ = startBlock;
+	bt_ = endBlock;
 
 }
 
-
-function end() {
-
-
 }
-
-
-function paymentAmount() {}
-
 

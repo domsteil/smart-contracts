@@ -3,8 +3,8 @@ pragma solidity ^0.4.4;
 import "./StandardToken.sol";
 import "./Ownable.sol";
 import "./Stoppable.sol";
-import "./Bounty.sol";
-import "./Claimable.sol";
+
+
 
 
 contract DAppsToken is StandardToken, Ownable {
