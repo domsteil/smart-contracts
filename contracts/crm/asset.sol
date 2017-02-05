@@ -18,7 +18,7 @@ contract Asset is Ownable {
   string public assetStatus
   uint public stateInt;
 
-  function Order() {
+  function Asset() {
     owner = msg.sender;
 
     stateMessage = "Created New Asset";

@@ -1,24 +1,16 @@
 pragma solidity ^0.4.4;
 
+contract Lead  {
 
-import "../ownership/Ownable.sol";
-
-
-
-contract Lead is Ownable {
-
-  address owner;
-  address lead;
-  uint eth = 1000000000000000000;
   string public contactName;
-  string public contactOwner;
   string public title;
   string public email;
   string public phone;
+  string public stateMessage;
   uint public stateInt;
 
+
   function Lead() {
-    owner = msg.sender;
 
     stateMessage = "Created New Lead";
     stateInt = 1;
@@ -27,15 +19,13 @@ contract Lead is Ownable {
 
   }
 
-  function setUpContactDetails(uint price, uint amount,  string contactName, string email, string phone, string contactOwner, string title, address oracleAddress) {
+  function setUpContactDetails(string contactName_, string email_, string phone_, string title_) {
     
-    stateMessage = "Contact Lead set";
+    stateMessage = "Contact Lead Details Set";
     stateInt = 2;
-    contactPrice = .02;
-    contactName = contactName;
-	  contactOwner = buyer;
-	  title = title;
-	  phone = phone;
-	  email = email;
+    contactName = contactName_;
+	  title = title_;
+	  phone = phone_;
+	  email = email_;
 	
   }
