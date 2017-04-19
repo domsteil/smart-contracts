@@ -32,7 +32,7 @@ contract Lead  {
     
     stateMessage = "Lead Details Updated";
     stateInt = 2;
-        firstName = firstName_;
+    firstName = firstName_;
     lastName = lastName_;
 	  title = title_;
 	  phone = phone_;

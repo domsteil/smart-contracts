@@ -1,33 +1,7 @@
 pragma solidity ^0.4.6;
 
 
-/*
-    Copyright 2016, Jordi Baylina
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-/// @title Vault Contract
-/// @author Jordi Baylina
-/// @notice This contract holds funds for Campaigns and automates payments. For
-///  this iteration the funds will come straight from the Giveth Multisig as a
-///  safety precaution, but once fully tested and optimized this contract will
-///  be a safe place to store funds equipped with optional variable time delays
-///  to allow for an optional escape hatch
-
-/// @dev `Owned` is a base level contract that assigns an `owner` that can be
-///  later changed
 contract Owned {
     /// @dev `owner` is the only address that can call a function with this
     /// modifier

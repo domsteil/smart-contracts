@@ -1,10 +1,7 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.6;
 
 
-import "../ownership/Ownable.sol";
-
-
-contract Account is Ownable {
+contract Account {
 
   address public owner;
   address public account;

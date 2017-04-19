@@ -1,3 +1,6 @@
+pragma solidity ^0.4.6;
+
+
 contract Messenger {
 	
 	function displayMessage() constant returns (string) {
