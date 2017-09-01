@@ -1,18 +1,48 @@
 
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.8;
 
+contract ERC20 {
+  uint public totalSupply;
+  function balanceOf(address who) constant returns (uint);
+  function allowance(address owner, address spender) constant returns (uint);
 
-import './ERC20.sol';
-import './SafeMath.sol';
+  function transfer(address to, uint value) returns (bool ok);
+  function transferFrom(address from, address to, uint value) returns (bool ok);
+  function approve(address spender, uint value) returns (bool ok);
+  event Transfer(address indexed from, address indexed to, uint value);
+  event Approval(address indexed owner, address indexed spender, uint value);
+}
+
+pragma solidity ^0.4.8;
 
 
 /**
- * Standard ERC20 token
- *
- * https://github.com/ethereum/EIPs/issues/20
- * Based on code by FirstBlood:
- * https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
+ * Math operations with safety checks
  */
+contract SafeMath {
+  function safeMul(uint a, uint b) internal returns (uint) {
+    uint c = a * b;
+    assert(a == 0 || c / a == b);
+    return c;
+  }
+
+  function safeSub(uint a, uint b) internal returns (uint) {
+    assert(b <= a);
+    return a - b;
+  }
+
+  function safeAdd(uint a, uint b) internal returns (uint) {
+    uint c = a + b;
+    assert(c>=a && c>=b);
+    return c;
+  }
+
+  function assert(bool assertion) internal {
+    if (!assertion) throw;
+  }
+}
+
+pragma solidity ^0.4.8;
 
 
 contract StandardToken is ERC20, SafeMath {

@@ -2,14 +2,13 @@ pragma solidity ^0.4.6;
 
 contract MSA  {
 
-  event NewMSACreated (address _newContractAddress);
-
   string public contractName;
   string public startBlock;
   string public endBlock;
   string public status;
   string public contractType;
   string public stateMessage;
+  string public message;
   uint public stateInt;
 
 
@@ -36,7 +35,7 @@ contract MSA  {
     status = status_;
     contractType = contractType_;
     message = stateMessage;
-	
+  
   }
 
 }

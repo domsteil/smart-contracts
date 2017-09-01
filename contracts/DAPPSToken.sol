@@ -7,10 +7,10 @@ import "./Stoppable.sol";
 
 
 
-contract DAppsToken is StandardToken, Ownable {
+contract DappsNetworkToken is StandardToken, Ownable {
 
-  string public name = "dapps.ai token";
-  string public symbol = "DAPT";
+  string public name = "Dapps Network Token";
+  string public symbol = "DNT";
   uint public decimals = 18;
   
   uint public startBlock; //crowdsale start block (set in constructor)

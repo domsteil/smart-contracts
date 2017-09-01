@@ -10,6 +10,7 @@ contract MSA  {
   string public status;
   string public contractType;
   string public stateMessage;
+  string public message;
   uint public stateInt;
 
 
