@@ -1,0 +1,58 @@
+public with sharing class HyperledgerFabricShipmentCallout {
+    
+  private static final String requestURL = 'http://salesforceblockchain.com:3000/api/Shipment';  
+    
+      public class Asset {
+        @InvocableVariable(label='AssetName')
+        public String AssetName;
+        @InvocableVariable(label='Product')
+        public String AssetProduct;
+        @InvocableVariable(label='Quantity')
+        public Integer Quantity;
+        @InvocableVariable(label='AssetId')
+        public Id AssetId;
+        
+    }
+    
+    @InvocableMethod(label='Post Shipment to Hyperledger')
+    public static void postToFabric(List<Asset> assets) {
+        AssetProduct a = assets[0];
+        Map<String,Object> msg = new Map<String,Object>();
+        msg.put('$class', 'dapps.salesforce.demo.Shipment');
+        msg.put('shipmentId', a.AssetName);
+        msg.put('type', a.AssetName);
+        msg.put('status', 'CREATED');
+        msg.put('unitCount', a.Quantity);
+        msg.put('contract', 'CONTRACT_1');
+        msg.put('shipper', 'RYDER');
+        msg.put('assetId', a.AssetId);
+        String body = JSON.serialize(msg);    
+        System.enqueueJob(new QueueableFabricCall(requestURL, 'POST', body));
+    }
+     
+    public class QueueableFabricCall implements System.Queueable, Database.AllowsCallouts {
+         
+        private final String url;
+        private final String method;
+        private final String body;
+        
+        public QueueableFabricCall(String url, String method, String body) {
+            this.url = url;
+            this.method = method;
+            this.body = body;
+        }
+         
+        public void execute(System.QueueableContext ctx) {
+            Http h = new Http();
+            HttpRequest req = new HttpRequest();
+            req.setHeader('Content-Type', 'application/json;charset=UTF-8');
+            req.setEndpoint(url);
+            req.setMethod(method);
+            req.setBody(body);
+            Http http = new Http();
+            HttpResponse res = http.send(req);
+        }
+ 
+    }
+
+}

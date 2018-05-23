@@ -1,6 +1,6 @@
 pragma solidity ^0.4.2;
 // Proof of Existence contract, version 2
-contract ProofOfExistence2 {
+contract ProofOfExistence {
   // state
   bytes32[] private proofs;
   // store a proof of existence in the contract state
