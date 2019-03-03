@@ -9,7 +9,7 @@ import "./Stoppable.sol";
 
 contract DappsToken is StandardToken, Ownable {
 
-  string public name = "dapps.ai token";
+  string public name = "dapps token";
   string public symbol = "DAPT";
   uint public decimals = 18;
   

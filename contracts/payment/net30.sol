@@ -21,7 +21,7 @@ contract net30 is Ownable, Killable {
         multisig = multisigInput;
         startBlock = startBlockInput;
         endBlock = endBlockInput;
-		    payBlock = payBlockInput;
+	    payBlock = payBlockInput;
         paymentAmount = paymentAmountInput;
 
   }

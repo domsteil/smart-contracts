@@ -6,6 +6,7 @@ pragma solidity ^0.4.9;
  * Inherit from this contract and use asyncSend instead of send.
  */
 contract PullPayment {
+  
   mapping(address => uint) public payments;
 
   // store sent amount as credit to be pulled, called by payer
@@ -26,6 +27,10 @@ contract PullPayment {
       throw;
     }
   }
+
+}
+
+pragma solidity ^0.4.9;
 
 contract Invoice is PullPayment {
 

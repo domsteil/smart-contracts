@@ -1,10 +1,11 @@
 pragma solidity ^0.4.6;
 
-contract MSA  {
+contract NDA  {
 
-  event NewMSACreated (address _newContractAddress);
+  event NewNDACreated (address _newContractAddress);
 
   string public contractName;
+  address public counterparty;
   string public startBlock;
   string public endBlock;
   string public status;
@@ -14,11 +15,12 @@ contract MSA  {
   uint public stateInt;
 
 
-  function MSA(string contractName_, string startBlock_, string endBlock_, string status_, string contractType_)  {
+  function NDA(string contractName_, address counterparty_, string startBlock_, string endBlock_, string status_, string contractType_)  {
 
-    stateMessage = "Created New MSA";
+    stateMessage = "Created New NDA";
     stateInt = 1;
     contractName = contractName_;
+    counterpartyName = counterparty_;
     startBlock = startBlock_;
     endBlock = endBlock_;
     status = status_;
@@ -29,7 +31,7 @@ contract MSA  {
 
   function updateContractDetails(string contractName_, string startBlock_, string endBlock_, string status_, string contractType_) {
     
-    stateMessage = "MSA Details Updated";
+    stateMessage = "NDA Details Updated";
     stateInt = 2;
     contractName = contractName_;
     startBlock = startBlock_;
@@ -39,5 +41,39 @@ contract MSA  {
     message = stateMessage;
 	
   }
+
+  function activateNDA() {
+        
+    stateMessage = "NDA InEffect";
+    stateInt = 2;
+
+    }
+
+
+
+function terminateNDA() {
+        
+    stateMessage = "NDA Terminated";
+    stateInt = 3;
+
+    }
+
+
+
+function renewNDA() {
+        
+    stateMessage = "NDA Renewed";
+    stateInt = 4;
+
+    }
+
+
+
+function expiredNDA() {
+        
+    stateMessage = "NDA Expired";
+    stateInt = 5;
+    
+    }
 
 }

@@ -46,10 +46,9 @@ contract StandardNDA {
 
 
     address public owner = 0x0;
-    address public account = 0x0;
-    address public account2 = 0x0;
+    address public counterparty = 0x0;
     string public disclosureType;
-    uint public startBlock;
+    string public startBlock;
     uint public stateInt;
     string public stateMessage;
     string public message;
@@ -62,8 +61,7 @@ contract StandardNDA {
         stateInt = 1;
         message = stateMessage;
         currentStatus = ContractStatus.created;
-        account = accountInput;
-        account2 = account2Input;
+        counterparty = account2Input;
         disclosureType = typeInput;
         status = statusInput;
         startBlock = startBlockInput;
@@ -74,9 +72,9 @@ contract StandardNDA {
         
     stateMessage = "NDA InEffect";
     stateInt = 2;
+
     }
 
-}
 
 
 function terminateNDA() {
@@ -86,7 +84,6 @@ function terminateNDA() {
 
     }
 
-}
 
 
 function renewNDA() {
@@ -95,8 +92,6 @@ function renewNDA() {
     stateInt = 4;
 
     }
-
-}
 
 
 
